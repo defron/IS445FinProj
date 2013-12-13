@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link href="@Url.Content("~/css/screen.css")" rel="stylesheet" />
+        <title>Kevin Thomer's ASP.NET MVC Web Site in Windows Azure</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>Kevin Thomer's ASP.NET MVC Web Site in Windows Azure</h1>
+                <nav>
+                    <ul id="navlist">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Form/Layout Demos</a>
+                            <ul>
+                                <li><a href="#">Web Form</a></li>
+                                <li><a href="#">Layout Demo  &#9654;</a>
+                                    <ul>
+                                        <li><a href="#">Absolute Layout</a></li>
+                                        <li><a href="#">Static Layout</a></li>
+                                        <li><a href="#">Float Layout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">ClientSide Demos</a></li>
+                        <li><a href="#">ServerSide Demos</a></li>
+                        <li><a href="#">About Myself</a></li>
+                    </ul>
+                </nav>
+            </header>
+                <div id="content">
+                    @RenderBody()
+                </div>
+            <footer>
+                <span>Kevin Thomer&copy; Contact Information:</span>
+                <address>
+                    <span><a href="mailto:Kevin.Thomer@student.csulb.edu">Email: Kevin.Thomer@student.csulb.edu</a></span>
+                    <span>Phone: (562) 281-5710</span>
+                </address>
+            </footer>
+        </div>
+    </body>
+</html>
