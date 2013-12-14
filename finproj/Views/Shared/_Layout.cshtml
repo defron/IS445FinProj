@@ -11,35 +11,28 @@
                 <h1>Kevin Thomer's ASP.NET MVC Web Site in Windows Azure</h1>
                 <nav>
                     <ul id="navlist">
-                        <li><a href="#">Home</a></li>
+                        <li>@Html.ActionLink("Home","Index")</li>
                         <li><a href="#">Form/Layout Demos</a>
                             <ul>
-                                <li><a href="#">Web Form</a></li>
+                                <li>@Html.ActionLink("Web Form","Form")</li>
                                 <li><a href="#">Layout Demo  &#9654;</a>
                                     <ul>
-                                        <li><a href="#">Absolute Layout</a></li>
-                                        <li><a href="#">Static Layout</a></li>
-                                        <li><a href="#">Float Layout</a></li>
+                                        <li>@Html.ActionLink("Absolute Layout","Absolute", null, new { @title="Demo of Absolute Positioning Layout" })</li>
+                                        <li>@Html.ActionLink("Static Layout","Static", null, new { @title="Demo of Static (default) Positioning Layout" })</li>
+                                        <li>@Html.ActionLink("Float Layout","Float", null, new { @title="Demo of Float Layout" })</li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#">ClientSide Demos</a></li>
-                        <li><a href="#">ServerSide Demos</a></li>
-                        <li><a href="#">About Myself</a></li>
+                        <li>@Html.ActionLink("ClientSide Demos","Client")</li>
+                        <li>@Html.ActionLink("ServerSide Demos","ServerSide")</li>
+                        <li>@Html.ActionLink("About Myself","About")</li>
                     </ul>
                 </nav>
             </header>
-                <div id="content">
-                    @RenderBody()
-                </div>
-            <footer>
-                <span>Kevin Thomer&copy; Contact Information:</span>
-                <address>
-                    <span><a href="mailto:Kevin.Thomer@student.csulb.edu">Email: Kevin.Thomer@student.csulb.edu</a></span>
-                    <span>Phone: (562) 281-5710</span>
-                </address>
-            </footer>
+            <div id="content">
+                @RenderBody()
+            </div>
         </div>
     </body>
 </html>

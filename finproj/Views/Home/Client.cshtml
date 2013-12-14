@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Client";
+}
+<script type="text/javascript">
+    function sentenceReversal() {
+        var givenString = document.forms["sentence"]["thestring"].value;
+        var words = givenString.split(" ");
+        var writingSpace = document.getElementById("writehere");
+        var innerH3 = document.createElement("h3");
+        innerH3.setAttribute("id", "intro");
+        writingSpace.style.border = "1px solid black";
+        writingSpace.style.padding = "10px";
+        writingSpace.style.margin = "10px";
+        for (var i = words.length; i > 0; i -= 1) {
+            writingSpace.innerHTML += words[i - 1] + " ";
+        }
+        writingSpace.insertAdjacentElement("beforebegin", innerH3);
+        document.getElementById("intro").innerHTML = "Your string reversed is:";
+        return false;
+    }
+</script>
+<h2>Welcome to my Client-side demo</h2>
+<h3>Enter a sentence below, and the words will be reversed.</h3>
+<h3>They will appear in a box at the bottom of the page after submission</h3>
+<form name="sentence" id="sentence" method="get" action="#" onsubmit="return sentenceReversal()">
+    <label>
+        <input type="text" name="thestring" id="thestring" required="required" placeholder="Enter a sentence" />
+        <input type="submit" value="Submit" />
+    </label>
+</form>
+<div id="writehere">
+
+</div>

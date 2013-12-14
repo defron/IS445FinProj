@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Form";
+}
+
+<h2>Welcome to my Web Form</h2>
+
+<h3>A demo form for hotel reservations</h3>
+
+@using (Html.BeginForm("Form", "Home"))
+{
+    <fieldset id="custinfo">
+        <legend>Customer Information</legend>
+        @Html.Label("name", "Full name:") @Html.TextBox("name","",new {@id="name", @placeholder="Firstname Lastname", @required="required"})<br />
+        @Html.Label("email", "Email address:") @Html.TextBox("email","",new {@type="email", @id="email", @required="required"})<br />
+        @Html.Label("phone", "Phone:") @Html.TextBox("phone","",new {@type="tel", @id="phone", @required="required"})<br />
+    </fieldset>
+    <fieldset id="roomfs">
+        <legend>Room Information</legend>
+        @Html.Label("adate", "Arrival date:") @Html.TextBox("adate","",new {@type="date", @id="adate", @required="required"})<br />
+        @Html.Label("atime", "Arrival time:") @Html.TextBox("atime","",new {@type="time", @id="atime", @required="required"})<br />
+        @Html.Label("room", "Select a room type:")
+        @Html.DropDownList("room", new List<SelectListItem>
+            {
+                new SelectListItem {Value = "luxury", Text = "Luxury"},
+                new SelectListItem {Value = "std", Text = "Standard"},
+                new SelectListItem {Value = "econ", Text = "Economic"},
+            }
+        )
+        <br />
+        @Html.Label("numnights", "Number of nights (valid number is from 1 to 30):") @Html.TextBox("numnights", "1", new {@type="number", @id="numnights", @min="1", @max="30", @step="1", @required="required"})<br />
+        @Html.Label("numguest", "Number of guests (the maximum guests is 3):") @Html.TextBox("numguest", "0", new {@type="number", @id="numguest", @min="0", @max="3", @step="1", @required="required"})<br />
+    </fieldset>
+    <fieldset id="other">
+        <legend>Other Information</legend>
+        @Html.Label("promo", "Promo code:") @Html.TextBox("promo","",new {@id="promo", @pattern="[a-zA-Z0-9]{4}", @maxlength="4", @title="Enter a 4-character alphanumeric promo code"})<br />
+        @Html.Label("notes", "Special Note:") @Html.TextArea("notes", new {@cols="40", @rows="5", @wrap="hard", @id="notes", @placeholder="Enter your special notes here"})<br />
+    </fieldset>
+    <input type="reset" id="reset" value="Clear form" /> <input type="submit" id="submit" value="Request Reservation" />
+}

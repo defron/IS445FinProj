@@ -1,0 +1,16 @@
+﻿@model string
+
+@{
+    ViewBag.Title = "Server";
+}
+
+<h2>Welcome to my Server-side formatting demo</h2>
+<p>format: ##########</p>
+@using (Html.BeginForm("ServerSide", "Home"))
+{
+  <label>Please input a phone number:
+  <input type="text" name="inputNumber" id="inputNumber" placeholder="1234567890" pattern="[0-9]{10}" title="format: ##########" value="" maxlength="10" required="required" /></label>
+  <input type="submit" name="submit" value="submit" />
+}
+<br />
+<br />

@@ -6,6 +6,8 @@ nav {
 	height: 26px;
     width: 100%;
     font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 nav ul ul {
@@ -25,6 +27,7 @@ nav ul {
 	padding-bottom: 0px;
 	list-style: none;
 	position: relative;
+    z-index: 30;
 	display: inline-table;
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -41,8 +44,11 @@ nav ul {
         display: block;
 	}
 
-    nav li:hover {
+    /*nav li:hover {
     background: #00ffff;
+    }*/
+    nav ul li a:hover {
+        background: #00ffff;
     }
 	
 	nav > ul > li:first-child
@@ -55,9 +61,7 @@ nav ul {
 	}
 
     nav > ul > li {
-        padding-top: 3px;
-        margin-right: 50px;
-        padding-bottom: 3px;
+        margin-right: 20px;
     }
 
 	nav ul li {
@@ -67,21 +71,27 @@ nav ul {
 		nav ul li a {
 			display: block;
             text-decoration: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
 		}
+        nav > ul > li > a {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
 			
 		
 	nav ul ul {
 		background: #d3d3d3;
         padding: 0;
 		position: absolute;
+        z-index: 20;
         top: 26px;
 	}
 		nav ul ul li {
 			float: none; 
             position: relative;
+            z-index: 10;
 			margin-bottom: 1px;
-            padding-top: 3px;
-            padding-bottom: 3px;
 			width: 120px;
 		}
 		
@@ -93,4 +103,73 @@ nav ul {
 
 #wrapper {
     width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#content {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+div#content > div#layouts {
+    width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+}
+div#layouts article {
+    width: 453px;
+    height: 200px;
+    background-color: pink;
+}
+div#layouts aside {
+    width: 227px;
+    height: 200px;
+    background-color: cyan;
+}
+div#layouts section {
+    width: 100%;
+    height: 35%;
+    margin-bottom: 10px;
+    background-color: brown;
+}
+div#layouts section:first-child {
+    margin-top: 10px;
+}
+div#layouts footer {
+    width: 100%;
+    height: 30px;
+    background-color: green;
+}
+div#layouts.abs {
+    position: absolute;
+    top: 118px;
+    z-index: 1;
+}
+aside.abs {
+    position: absolute;
+    top: 0px;
+    left: 453px;
+}
+article.float {
+    float: left;
+}
+aside.float {
+    float: right;
+}
+footer.float {
+    clear: both;
+}
+div#info img {
+    float: right;
+    margin-left: 20px;
+    margin-right: 50px;
+}
+div#info h3 {
+    padding-top: 10px;
+    color: purple;
+}
+h2#resume {
+    color: blue;
 }
