@@ -122,6 +122,7 @@
     <Content Include="css\screen.css" />
     <Content Include="Global.asax" />
     <Content Include="img\kevin.jpg" />
+    <Content Include="js\jquery-1.10.2.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -12,10 +12,10 @@
                 <nav>
                     <ul id="navlist">
                         <li>@Html.ActionLink("Home","Index")</li>
-                        <li><a href="#">Form/Layout Demos</a>
+                        <li><a href="#" class="disabled">Form/Layout Demos</a>
                             <ul>
                                 <li>@Html.ActionLink("Web Form","Form")</li>
-                                <li><a href="#">Layout Demo  &#9654;</a>
+                                <li><a href="#" class="disabled">Layout Demo  &#9654;</a>
                                     <ul>
                                         <li>@Html.ActionLink("Absolute Layout","Absolute", null, new { @title="Demo of Absolute Positioning Layout" })</li>
                                         <li>@Html.ActionLink("Static Layout","Static", null, new { @title="Demo of Static (default) Positioning Layout" })</li>
@@ -35,4 +35,13 @@
             </div>
         </div>
     </body>
+    <script src="~/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.disabled').click(function (event) { event.preventDefault(); });
+            $("#sentence").submit(function (event) {
+                event.preventDefault();
+            });
+        });
+    </script>
 </html>
