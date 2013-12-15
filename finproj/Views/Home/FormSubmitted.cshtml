@@ -1,0 +1,11 @@
+﻿@model List<string>
+
+@{
+    ViewBag.Title = "FormSubmitted";
+}
+
+<h2>Form Submitted!</h2>
+
+@foreach (string s in Model) {
+    <h4>@s</h4>
+}

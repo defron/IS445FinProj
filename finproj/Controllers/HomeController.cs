@@ -20,7 +20,25 @@ namespace finproj.Controllers
         {
             return View();
         }
-
+        [HttpPost]
+        public ActionResult Form(finproj.Models.FormModel form) {
+            List<string> formInfo = new List<string>();
+            formInfo.Add(String.Format("Name: {0}", form.name));
+            formInfo.Add(String.Format("Email: {0}", form.email));
+            formInfo.Add(String.Format("Phone Number: {0}", form.phone));
+            formInfo.Add(String.Format("Arrival Date: {0}", form.adate));
+            formInfo.Add(String.Format("Arrival Time: {0}", form.atime));
+            formInfo.Add(String.Format("Room Type: {0}", form.room));
+            formInfo.Add(String.Format("Number of Nights: {0}", form.numnights));
+            formInfo.Add(String.Format("Number of Guests: {0}", form.numguest));
+            if (!(String.IsNullOrEmpty(form.promo))) {
+                formInfo.Add(String.Format("Promo Code: {0}", form.promo));
+            }
+            if (!(String.IsNullOrEmpty(form.notes))) {
+                formInfo.Add(String.Format("Notes: {0}", form.notes));
+            }
+            return View("FormSubmitted", formInfo );
+        }
         public ActionResult Absolute()
         {
             return View();
